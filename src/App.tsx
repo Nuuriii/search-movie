@@ -1,6 +1,9 @@
-import dotenv from "dotenv";
-dotenv.config();
+import { SearchMovie } from "./Components/SearchMovie";
 
 export const App = () => {
-   return <div>App</div>;
+   return (
+      <div>
+         <SearchMovie />
+      </div>
+   );
 };
