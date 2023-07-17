@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Search.css";
+import axios from "axios";
 
 interface Movie {
    title: string;
@@ -20,8 +21,8 @@ export const SearchMovie = () => {
 
    const searchMovies = async () => {
       try {
-         const response = await fetch(API_URL);
-         const data = await response.json();
+         const response = await axios.get(API_URL);
+         const data = await response.data;
          const movieResults = data.results;
          const formattedMovies = movieResults.map((movie: any) => ({
             title: movie.title,
