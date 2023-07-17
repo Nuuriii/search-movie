@@ -11,19 +11,4 @@ A simple movie search application built with React that allows users to search f
 
 -  React
 -  Axios
--  CSS
-
-## Getting Started
-
-### Prerequisites
-
--  Node.js
--  npm
-
-### Installation
-
-1. Clone the repository:
-
-   ```shell
-   git clone https://github.com/your-username/movie-search-app.git
-   ```
+-  Vanila CSS
