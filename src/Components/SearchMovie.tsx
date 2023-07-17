@@ -38,9 +38,9 @@ export const SearchMovie = () => {
    };
 
    return (
-      <div>
+      <div className='main-container'>
          <h1>Movie Search App</h1>
-         <div>
+         <div className='search-container'>
             <input
                type='text'
                value={query}
@@ -49,18 +49,24 @@ export const SearchMovie = () => {
             />
             <button onClick={searchMovies}>Search</button>
          </div>
-         <div>
+         <div className='result-container'>
             {movies.map((movie) => (
-               <div key={movie.title}>
-                  <img
-                     src={`https://image.tmdb.org/t/p/w200${movie.poster}`}
-                     alt={movie.title}
-                  />
-                  <h2>{movie.title}</h2>
-                  <p>Rating: {movie.rating}</p>
-                  <p>{movie.overview}</p>
+               <div className='movie-container' key={movie.title}>
+                  <div className='movie-card'>
+                     <div>
+                        <img
+                           src={`https://image.tmdb.org/t/p/w200${movie.poster}`}
+                           alt={movie.title}
+                        />
+                     </div>
+                     <div className='description-container'>
+                        <h2>{movie.title}</h2>
+                        <p>{movie.rating}/10</p>
+                     </div>
+                  </div>
+                  {/* <p>{movie.overview}</p>
                   <p>Director: {movie.director}</p>
-                  <p>Cast: {movie.cast.join(", ")}</p>
+                  <p>Cast: {movie.cast.join(", ")}</p> */}
                </div>
             ))}
          </div>
