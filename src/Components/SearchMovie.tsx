@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Search.css";
 
 interface Movie {
    title: string;
