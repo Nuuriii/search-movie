@@ -11,4 +11,4 @@ A simple movie search application built with React that allows users to search f
 
 -  React
 -  Axios
--  Vanila
+-  Vanila CSS
