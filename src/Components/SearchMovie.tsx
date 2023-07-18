@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Search.css";
 import axios from "axios";
 
@@ -15,15 +15,21 @@ export const SearchMovie = () => {
    const [query, setQuery] = useState("");
    const [movies, setMovies] = useState<Movie[]>([]);
 
-   const API_URL = `https://api.themoviedb.org/3/search/movie?api_key=${
-      import.meta.env.VITE_SOME_KEY
-   }&query=${query}`;
+   const API_KEY = import.meta.env.VITE_SOME_KEY;
+   const API_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`;
+
+   useEffect(() => {
+      searchMovies();
+   }, []);
 
    const searchMovies = async () => {
       try {
+         setMovies([]);
+
          const response = await axios.get(API_URL);
          const data = await response.data;
          const movieResults = data.results;
+
          const formattedMovies = movieResults.map((movie: any) => ({
             title: movie.title,
             poster: movie.poster_path,
